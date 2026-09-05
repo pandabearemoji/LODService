@@ -1,8 +1,8 @@
 # LODService
 A Roblox Plugin for custom LOD generation and handling.
 
-Haven't updated this in a while, so this tutorial will be pretty short (might return to this later)
-The code is pretty outdated so I apologize in advance, there are also some unfixed type errors which I forgot to fix and cannot be bothered to without a full update
+Haven't updated this in a while, so this tutorial will be pretty short (might return to this later).
+The code is pretty outdated so I apologize in advance, there are also some unfixed type errors which I forgot to fix and cannot be bothered to without a full update.
 
 ## LOD GENERATION
 
