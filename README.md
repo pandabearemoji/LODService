@@ -82,6 +82,7 @@ Cell Size - controls Vertex Clustering's cell size + determines the "quality" (n
 QMS specific settings:<br/>
   - Target Tri Count - QMS decimates the mesh until a certain tri count is met (kind of, there are other exit conditions), this setting controls that maximum tri count<br/>
   - Pairing Threshold - QMS contracts non-connected vertices by selecting pairing those that are close enough - the higher this is the better the algorithm deals with disconnected geometry, but setting this too high slows the algorithm down by a ton so be careful<br/>
+
 Custom LOD Models - you can add a custom LOD model as a level<br/>
 LOD Texture, LOD SurfaceAppearance - you can set the texture/surfaceappearance of the generated mesh if you would like to (this is especially useful when creating LODs of a single mesh)<br/>
 Generate Transparent Mesh - generates a separate transparent mesh in order to help fix clipping when using per-vertex transparencies
