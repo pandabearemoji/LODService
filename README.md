@@ -85,9 +85,9 @@ Generate Transparent Mesh - generates a separate transparent mesh in order to he
 
 ## RUNTIME USE
 
-The datatype hierarchy within the module is: LODRegion -> LODGroup -> LODModel<br/>
-LODRegion is a set of LODs that loads in at the same time to optimize the amount of distance checks<br/>
-LODGroup is a child of LODRegion and has a set template (the template generated from the LOD GENERATION segment)<br/>
+The datatype hierarchy within the module is: ModelRegion -> ModelGroup -> LODModel<br/>
+ModelRegion is a set of LODs that loads in at the same time to optimize the amount of distance checks<br/>
+ModelGroup is a child of ModelRegion and has a set template (the template generated from the LOD GENERATION segment)<br/>
 LODModel is a specific instance (a model) which has been added to the LOD pipeline
 
 Here's an example of an automated LODification algorithm to help you understand the basic architecture
