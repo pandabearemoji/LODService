@@ -1,11 +1,11 @@
-# LODService<br/>
-A Roblox Plugin for custom LOD generation and handling.<br/>
-<br/>
-Haven't updated this in a while, so this tutorial will be pretty short (might return to this later)<br/>
-The code is pretty outdated so I apologize in advance, there are also some unfixed type errors which I forgot to fix and cannot be bothered to without a full update<br/>
-<br/>
-## LOD GENERATION<br/>
-<br/>
+# LODService
+A Roblox Plugin for custom LOD generation and handling.
+
+Haven't updated this in a while, so this tutorial will be pretty short (might return to this later)
+The code is pretty outdated so I apologize in advance, there are also some unfixed type errors which I forgot to fix and cannot be bothered to without a full update
+
+## LOD GENERATION
+
 Step 1. Process a Model by selecting it. I recommend downloading [AssetDeliveryProxy](https://github.com/TylerAtStarboard/RobloxAssetDeliveryProxy/tree/main?tab=readme-ov-file) so that processing assets not made by you is possible.
 Step 2. Add an LOD "level" by clicking "Add Mesh Element" or "Add Billboard Element" and choose an LOD generation method (Vertex Clustering, QMS, Custom).
 Step 3. Customize the settings, experiment a little, then click Generate Mesh.
