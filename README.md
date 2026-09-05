@@ -92,7 +92,7 @@ LODModel is a specific instance (a model) which has been added to the LOD pipeli
 
 Here's an example of an automated LODification algorithm to help you understand the basic architecture
 
-`local REGION_SIZE = 100
+``local REGION_SIZE = 100
 
 local LOD = game:GetService("ReplicatedStorage").LOD
 local Templates = LOD.Templates
@@ -153,4 +153,4 @@ for _, v : Instance in workspace:GetChildren() do
 end
 
 LODService:Run()
-print(string.format("LODService started with %i regions, %i groups and %i models", regionCount, groupCount, modelCount))`
+print(string.format("LODService started with %i regions, %i groups and %i models", regionCount, groupCount, modelCount))``
