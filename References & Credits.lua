@@ -1,0 +1,7 @@
+-- [1] https://www.comp.nus.edu.sg/~tants/Paper/simplify.pdf <-- Main article for vertex clustering
+-- [2] https://www.cs.cmu.edu/~garland/Papers/quadrics.pdf
+-- CREDIT TO EGOMOOSE FOR CSG TO MESH: https://devforum.roblox.com/t/csg-to-editablemesh-plugin/3942570
+-- CREDIT TO SIRCFENNER FOR PNG DECODER: https://github.com/sircfenner/png-luau/tree/main
+-- CREDIT TO TYLERATSTARBOARD FOR ASSETDELIVERYPROXY: 
+--		https://github.com/TylerAtStarboard/RobloxAssetDeliveryProxy/tree/main?tab=readme-ov-file
+-- CREDIT TO BTROBLOX FOR MES HPARSER: https://github.com/AntiBoomz/BTRoblox/blob/master/js/rbx/Parser/MeshParser.js
