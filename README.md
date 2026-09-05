@@ -92,65 +92,65 @@ LODModel is a specific instance (a model) which has been added to the LOD pipeli
 
 Here's an example of an automated LODification algorithm to help you understand the basic architecture
 
-``local REGION_SIZE = 100
-
-local LOD = game:GetService("ReplicatedStorage").LOD
-local Templates = LOD.Templates
-local LODService = require(LOD.LODService)
-
-local regionCount = 0
-local modelCount = 0
-local groupCount = 0
-
-
--- you can use GetDescendants here aswell
-for _, v : Instance in workspace:GetChildren() do
-	if not v:IsA("Model") then
-		continue
-	end
+	``local REGION_SIZE = 100
 	
-	local templateModule = Templates:FindFirstChild(v.Name)
-
-	if not templateModule then
-		continue
-	end
-
-	modelCount += 1
-
-	local template = require(templateModule)
-	local pivot = v:GetPivot().Position
-
-	local foundRegion = false
-
-	for _, region in _G.regions do
-		if (region.pivot - pivot).Magnitude < REGION_SIZE then
-			foundRegion = true
-
-			local foundGroup = false
-
-			for _, group in region.groups do
-				if group.template == template then
-					foundGroup = true
-					group:LODifyModel(v)
-					break
+	local LOD = game:GetService("ReplicatedStorage").LOD
+	local Templates = LOD.Templates
+	local LODService = require(LOD.LODService)
+	
+	local regionCount = 0
+	local modelCount = 0
+	local groupCount = 0
+	
+	
+	-- you can use GetDescendants here aswell
+	for _, v : Instance in workspace:GetChildren() do
+		if not v:IsA("Model") then
+			continue
+		end
+		
+		local templateModule = Templates:FindFirstChild(v.Name)
+	
+		if not templateModule then
+			continue
+		end
+	
+		modelCount += 1
+	
+		local template = require(templateModule)
+		local pivot = v:GetPivot().Position
+	
+		local foundRegion = false
+	
+		for _, region in _G.regions do
+			if (region.pivot - pivot).Magnitude < REGION_SIZE then
+				foundRegion = true
+	
+				local foundGroup = false
+	
+				for _, group in region.groups do
+					if group.template == template then
+						foundGroup = true
+						group:LODifyModel(v)
+						break
+					end
 				end
+	
+				if not foundGroup then
+					groupCount += 1
+					region:CreateGroup(template):LODifyModel(v)
+				end
+	
+				break
 			end
-
-			if not foundGroup then
-				groupCount += 1
-				region:CreateGroup(template):LODifyModel(v)
-			end
-
-			break
+		end
+	
+		if not foundRegion then
+			regionCount += 1
+			groupCount += 1
+			LODService:CreateRegion(pivot):CreateGroup(template):LODifyModel(v)
 		end
 	end
-
-	if not foundRegion then
-		regionCount += 1
-		groupCount += 1
-		LODService:CreateRegion(pivot):CreateGroup(template):LODifyModel(v)
-	end
-end
-
-LODService:Run()
-print(string.format("LODService started with %i regions, %i groups and %i models", regionCount, groupCount, modelCount))``
+	
+	LODService:Run()
+	print(string.format("LODService started with %i regions, %i groups and %i models", regionCount, groupCount, modelCount))``
